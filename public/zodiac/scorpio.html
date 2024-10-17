@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scorpio Horoscope</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e1e1e, #333);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        align-items: flex-start;
+        max-width: 1000px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .zodiac-image {
+        width: 350px;
+        height: auto;
+        margin: 0;
+        border-right: 3px solid #e74c3c;
+      }
+
+      .horoscope-info {
+        padding: 20px 30px;
+        max-width: 600px;
+        text-align: left;
+      }
+
+      h1 {
+        color: #e74c3c;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        color: #f39c12;
+        margin-top: 20px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .zodiac-image {
+          width: 100%;
+          height: auto;
+          border-right: none;
+          border-bottom: 3px solid #e74c3c;
+        }
+
+        .horoscope-info {
+          max-width: 100%;
+          padding: 20px;
+        }
+      }
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .close-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closePage()">Close</button>
+
+    <div class="container">
+      <img src="../images/scorpio.jpg" alt="Gemini" class="zodiac-image" />
+      <div class="horoscope-info">
+        <h1>Scorpio Horoscope</h1>
+        <h2>What is the personality of a Scorpio?</h2>
+        <p>
+          Scorpios are known for their intensity, passion, and determination.
+          They possess a deep, magnetic presence and are often seen as
+          mysterious or enigmatic. Their strong emotional depth allows them to
+          experience life with great intensity, making them both powerful and
+          captivating individuals.
+        </p>
+        <p>
+          Scorpios are highly intuitive and perceptive, often able to understand
+          the underlying motives and emotions of those around them. They are
+          fiercely loyal and protective of their loved ones, and they value
+          authenticity and honesty above all else.
+        </p>
+        <p>
+          Their intense focus and drive make them excellent at achieving their
+          goals, but they can also become consumed by their pursuits or
+          struggles, leading to a tendency to become overly secretive or
+          brooding.
+        </p>
+        <h2>What are a Scorpio's weaknesses?</h2>
+        <p>
+          Scorpios' intensity can sometimes turn into possessiveness or
+          jealousy, particularly when they feel threatened or insecure. Their
+          tendency to delve into the depths of their emotions can lead to bouts
+          of obsession or fixation. Additionally, their secretive nature can
+          create challenges in forming open and trusting relationships.
+        </p>
+        <h2>Does Scorpio fall in love quickly?</h2>
+        <p>
+          Scorpios often fall in love deeply and with great intensity. While
+          they may take their time to open up fully, once they commit, they do
+          so with a profound emotional connection. Their approach to love is
+          all-or-nothing, seeking a meaningful and transformative relationship
+          rather than something superficial.
+        </p>
+        <h2>Who are Scorpios attracted to?</h2>
+        <p>
+          Scorpios are attracted to individuals who can match their depth and
+          intensity. They are drawn to people who are genuine, confident, and
+          capable of engaging in deep, meaningful conversations. A partner who
+          respects their need for privacy while being emotionally available and
+          understanding will resonate well with a Scorpio's passionate nature.
+        </p>
+      </div>
+    </div>
+    <script>
+      function closePage() {
+        window.location.href = '../k.html'; // Redirect to k.html on close
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sagittarius Horoscope</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e1e1e, #333);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        align-items: flex-start;
+        max-width: 1000px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .zodiac-image {
+        width: 350px;
+        height: auto;
+        margin: 0;
+        border-right: 3px solid #e74c3c;
+      }
+
+      .horoscope-info {
+        padding: 20px 30px;
+        max-width: 600px;
+        text-align: left;
+      }
+
+      h1 {
+        color: #e74c3c;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        color: #ffb84d;
+        margin-top: 20px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .zodiac-image {
+          width: 100%;
+          height: auto;
+          border-right: none;
+          border-bottom: 3px solid #e74c3c;
+        }
+
+        .horoscope-info {
+          max-width: 100%;
+          padding: 20px;
+        }
+      }
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .close-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closePage()">Close</button>
+
+    <div class="container">
+      <img src="../images/sagittarius.jpg" alt="Gemini" class="zodiac-image" />
+      <div class="horoscope-info">
+        <h1>Sagittarius Horoscope</h1>
+        <h2>What is the personality of a Sagittarius?</h2>
+        <p>
+          Sagittarius is known for their adventurous spirit, curiosity, and a
+          love for freedom. They are open-minded, enthusiastic, and crave new
+          experiences. Sagittarians are optimists, always looking for the silver
+          lining and ready to explore the unknown.
+        </p>
+        <p>
+          They have a natural tendency to be philosophical and are often in
+          pursuit of higher knowledge. Sagittarians are also known for their
+          honesty, sometimes being too blunt. They value truth and integrity and
+          are not afraid to speak their minds.
+        </p>
+        <p>
+          While they enjoy their independence, Sagittarians are also generous
+          and love to share their experiences with others. They are the life of
+          the party and enjoy socializing, especially with like-minded
+          individuals who share their love for adventure.
+        </p>
+        <h2>What are a Sagittarius' weaknesses?</h2>
+        <p>
+          Sagittarians can sometimes be too blunt, hurting others' feelings
+          without realizing it. Their desire for freedom can make them
+          commitment-phobic, leading to difficulties in long-term relationships.
+          They may also struggle with impatience and a lack of attention to
+          detail.
+        </p>
+        <p>
+          Their constant search for new experiences can sometimes make them
+          restless and discontent with what they already have. This can lead to
+          a tendency to abandon projects or relationships too quickly.
+        </p>
+        <h2>Does Sagittarius fall in love quickly?</h2>
+        <p>
+          Sagittarius is not the type to fall in love at first sight, as they
+          value their freedom too much to rush into a relationship. However,
+          once they find someone who shares their values and sense of adventure,
+          they can fall deeply and passionately in love. Sagittarians need a
+          partner who can keep up with their pace and respect their need for
+          independence.
+        </p>
+        <h2>Who are Sagittarius attracted to?</h2>
+        <p>
+          Sagittarians are attracted to people who are adventurous, open-minded,
+          and spontaneous. They love a partner who is intellectually stimulating
+          and who can engage them in deep conversations. Physical attraction is
+          important, but they are more drawn to someone’s mind and spirit. A
+          sense of humor and a positive outlook on life are also key traits that
+          attract a Sagittarius.
+        </p>
+      </div>
+    </div><script>
+      function closePage() {
+        window.location.href = '../k.html'; // Redirect to k.html on close
+      }
+    </script>
+  </body>
+</html>

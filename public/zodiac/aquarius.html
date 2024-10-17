@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aquarius Horoscope</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e1e1e, #333);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        align-items: flex-start;
+        max-width: 1000px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .zodiac-image {
+        width: 350px;
+        height: auto;
+        margin: 0;
+        border-right: 3px solid #3498db;
+      }
+
+      .horoscope-info {
+        padding: 20px 30px;
+        max-width: 600px;
+        text-align: left;
+      }
+
+      h1 {
+        color: #3498db;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        color: #f1c40f;
+        margin-top: 20px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .zodiac-image {
+          width: 100%;
+          height: auto;
+          border-right: none;
+          border-bottom: 3px solid #3498db;
+        }
+
+        .horoscope-info {
+          max-width: 100%;
+          padding: 20px;
+        }
+      }
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .close-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closePage()">Close</button>
+
+    <div class="container">
+      <img src="../images/aquarius.jpg" alt="Gemini" class="zodiac-image" />
+      <div class="horoscope-info">
+        <h1>Aquarius Horoscope</h1>
+        <h2>What is the personality of an Aquarius?</h2>
+        <p>
+          Aquarius individuals are known for their innovative and independent
+          nature. They are visionaries who love to explore new ideas and ways of
+          thinking. They thrive on intellectual stimulation and are often at the
+          forefront of social change, driven by a deep sense of fairness and
+          justice.
+        </p>
+        <p>
+          Aquarians value their freedom and individuality, often pursuing
+          unconventional paths in life. They are natural humanitarians, caring
+          deeply about the welfare of others and the world. Their
+          forward-thinking mindset makes them great problem solvers and
+          inventors.
+        </p>
+        <p>
+          Although they can be aloof and detached at times, Aquarians are
+          fiercely loyal to their friends and causes. They seek to create a
+          better world, often working tirelessly for social progress and
+          innovation.
+        </p>
+        <h2>What are an Aquarius' weaknesses?</h2>
+        <p>
+          Aquarians can sometimes be perceived as distant or unemotional due to
+          their logical approach to life. Their strong desire for independence
+          may lead them to be unpredictable or rebellious, resisting authority
+          and societal norms.
+        </p>
+        <p>
+          They may struggle with forming deep emotional connections, preferring
+          intellectual companionship over emotional intimacy. Their idealistic
+          nature can also make them stubborn, holding onto ideas or beliefs even
+          when they are impractical.
+        </p>
+        <h2>Does Aquarius fall in love quickly?</h2>
+        <p>
+          Aquarius tends to take a more rational approach to love, often
+          analyzing their feelings before fully committing. They appreciate the
+          intellectual connection in relationships and are drawn to partners who
+          share their interests and values.
+        </p>
+        <p>
+          While they may not fall in love quickly, once they do, they are loyal
+          and committed. Aquarians value their partner's independence and expect
+          the same in return, creating a relationship based on mutual respect
+          and freedom.
+        </p>
+        <h2>Who are Aquarius attracted to?</h2>
+        <p>
+          Aquarians are attracted to individuals who are intelligent,
+          independent, and forward-thinking. They are drawn to people who can
+          engage them in deep conversations and share their passion for social
+          causes and innovation.
+        </p>
+        <p>
+          They appreciate honesty, originality, and a sense of adventure in
+          their partners. Someone who can challenge their ideas and inspire them
+          to think differently will capture an Aquarian's heart.
+        </p>
+      </div>
+    </div>
+    <script>
+      function closePage() {
+        window.location.href = '../k.html'; // Redirect to k.html on close
+      }
+    </script>
+  </body>
+</html>

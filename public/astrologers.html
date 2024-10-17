@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrologers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        .astrologers-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .astrologer-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .astrologer-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .astrologer-details {
+            margin-top: 10px;
+        }
+
+        .contact-btn {
+            margin-top: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .contact-btn:hover {
+            background-color: #45a049;
+        }
+
+        .contact-info {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Meet Our Astrologers</h1>
+
+    <div class="astrologers-container">
+        <!-- Astrologer 1 -->
+        <div class="astrologer-card">
+            <img src="images/aashachaudhary.jpg" alt="Aasha Chaudhary">
+            <div class="astrologer-details">
+                <h2>Aasha Chaudhary</h2>
+                <p>Experience: 10 years<br>Specialization: Vedic Astrology, Love Compatibility</p>
+            </div>
+            <button class="contact-btn" onclick="contactAstrologer('Aasha Chaudhary')">Contact Now</button>
+            <div class="contact-info" id="Aasha Chaudhary">
+                <p>Location: Mumbai, Maharashtra</p>
+                <p>Mobile: +91 9876543210</p>
+                <p>Email: aasha.chaudhary@mail.com</p>
+            </div>
+        </div>
+
+        <!-- Astrologer 2 -->
+        <div class="astrologer-card">
+            <img src="images/acharya mandavya.jpg" alt="Acharya Mandavya">
+            <div class="astrologer-details">
+                <h2>Acharya Mandavya</h2>
+                <p>Experience: 15 years<br>Specialization: Tarot Reading, Career Advice</p>
+            </div>
+            <button class="contact-btn" onclick="contactAstrologer('Acharya Mandavya')">Contact Now</button>
+            <div class="contact-info" id="Acharya Mandavya">
+                <p>Location: Jaipur, Rajasthan</p>
+                <p>Mobile: +91 9876543211</p>
+                <p>Email: acharya.mandavya@mail.com</p>
+            </div>
+        </div>
+
+        <!-- Astrologer 3 -->
+        <div class="astrologer-card">
+            <img src="images/parmathakur.jpg" alt="Parma Thakur">
+            <div class="astrologer-details">
+                <h2>Parma Thakur</h2>
+                <p>Experience: 12 years<br>Specialization: Horoscope Matching, Financial Astrology</p>
+            </div>
+            <button class="contact-btn" onclick="contactAstrologer('Parma Thakur')">Contact Now</button>
+            <div class="contact-info" id="Parma Thakur">
+                <p>Location: Bengaluru, Karnataka</p>
+                <p>Mobile: +91 9876543212</p>
+                <p>Email: parma.thakur@mail.com</p>
+            </div>
+        </div>
+
+        <!-- Astrologer 4 -->
+        <div class="astrologer-card">
+            <img src="images/rohinishastri.jpg" alt="Rohini Shastri">
+            <div class="astrologer-details">
+                <h2>Rohini Shastri</h2>
+                <p>Experience: 8 years<br>Specialization: Palmistry, Health Astrology</p>
+            </div>
+            <button class="contact-btn" onclick="contactAstrologer('Rohini Shastri')">Contact Now</button>
+            <div class="contact-info" id="Rohini Shastri">
+                <p>Location: Kolkata, West Bengal</p>
+                <p>Mobile: +91 9876543213</p>
+                <p>Email: rohini.shastri@mail.com</p>
+            </div>
+        </div>
+
+        <!-- Astrologer 5 -->
+        <div class="astrologer-card">
+            <img src="images/shreejothidanilayam.jpg" alt="Shreejothidanilayam">
+            <div class="astrologer-details">
+                <h2>Shreejothidanilayam</h2>
+                <p>Experience: 20 years<br>Specialization: Numerology, Relationship Counseling</p>
+            </div>
+            <button class="contact-btn" onclick="contactAstrologer('Shreejothidanilayam')">Contact Now</button>
+            <div class="contact-info" id="Shreejothidanilayam">
+                <p>Location: Hyderabad, Telangana</p>
+                <p>Mobile: +91 9876543214</p>
+                <p>Email: shreejothidanilayam@mail.com</p>
+            </div>
+        </div>
+
+        <!-- Astrologer 6 -->
+        <div class="astrologer-card">
+            <img src="images/sramnath.jpg" alt="S. Ramnath">
+            <div class="astrologer-details">
+                <h2>S. Ramnath</h2>
+                <p>Experience: 5 years<br>Specialization: Western Astrology, Career Predictions</p>
+            </div>
+            <button class="contact-btn" onclick="contactAstrologer('S. Ramnath')">Contact Now</button>
+            <div class="contact-info" id="S. Ramnath">
+                <p>Location: Chennai, Tamil Nadu</p>
+                <p>Mobile: +91 9876543215</p>
+                <p>Email: s.ramnath@mail.com</p>
+            </div>
+        </div>
+
+        <!-- Astrologer 7 -->
+        <div class="astrologer-card">
+            <img src="images/uttambhardwaj.jpg" alt="Uttam Bharadwaj">
+            <div class="astrologer-details">
+                <h2>Uttam Bharadwaj</h2>
+                <p>Experience: 13 years<br>Specialization: Vedic Astrology, Spiritual Healing</p>
+            </div>
+            <button class="contact-btn" onclick="contactAstrologer('Uttam Bharadwaj')">Contact Now</button>
+            <div class="contact-info" id="Uttam Bharadwaj">
+                <p>Location: Pune, Maharashtra</p>
+                <p>Mobile: +91 9876543216</p>
+                <p>Email: uttam.bharadwaj@mail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function contactAstrologer(astrologerName) {
+            const contactInfo = document.getElementById(astrologerName);
+            contactInfo.style.display = contactInfo.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>

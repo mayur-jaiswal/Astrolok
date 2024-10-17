@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+    .navbar {
+      width: 100%;
+      background-color: #333;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      padding: 14px 20px;
+    }
+    h1 {
+      color: #2ecc71;
+    }
+    .blog-post {
+      background-color: #333;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    h2 {
+      color: #f39c12;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .close-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: auto;
+  }
+
+  .close-btn:hover {
+    background-color: #d32f2f;
+  }
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <button class="close-btn" onclick="closePage()">Close</button>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+  <h1>Latest Blogs</h1>
+  
+  <div class="blog-post">
+    <h2>Astrology and You: Understanding Your Zodiac Sign</h2>
+    <p>
+      Astrology has fascinated people for centuries, offering insights into our personalities and futures based on celestial patterns. In this post, we dive into the basics of astrology and how your zodiac sign can offer unique perspectives on life.
+    </p>
+  </div>
+
+  <div class="blog-post">
+    <h2>Why Horoscopes Matter in the Modern World</h2>
+    <p>
+      Though some may view horoscopes as entertainment, many find deep value in the lessons astrology offers. Discover how astrology can guide decision-making and provide clarity in today's fast-paced world.
+    </p>
+  </div>
+  <script>
+    function closePage() {
+      window.location.href = 'k.html'; // Redirect to k.html
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astrolok Horoscope</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between; /* Space between containers */
+        padding: 20px;
+      }
+
+      .container {
+        background-color: #333;
+        opacity: 75%;
+        flex-basis: 30%; /* Each container takes up 30% of the available width */
+        padding: 10px;
+        border: 1px solid #fff; /* Just to visually see the containers */
+        box-sizing: border-box;
+        border-radius: 35px;
+      }
+
+      input,
+      button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      #result {
+        margin-top: 20px;
+      }
+
+      .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+      #result {
+        background-color: #333;
+      }
+      .zodiac-image {
+        width: 200px;
+        height: auto;
+        margin: 10px;
+        cursor: pointer;
+      }
+
+      #bgVideo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        background: no-repeat;
+        background-size: cover;
+      }
+
+      .navbar {
+        width: 100%;
+        background-color: #333;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .navbar a,
+      .navbar button {
+        text-decoration: none;
+        color: white;
+        padding: 14px 20px;
+        text-align: center;
+        display: block;
+        font-size: 16px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .navbar a:hover,
+      .navbar button:hover {
+        background-color: #575757;
+      }
+
+      .logout-btn {
+        background-color: #f44336;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        cursor: pointer;
+      }
+
+      .logout-btn:hover {
+        background-color: #d32f2f;
+      }
+
+      /* Footer styling */
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      img {
+        width: 300px;
+      }
+      #result {
+        margin-bottom: 20px; /* Space above the result */
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-background">
+      <video autoplay muted loop id="bgVideo">
+        <source src="bg.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="navbar">
+      <h1>Astrology Horoscope |</h1>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="blogs.html">Blogs</a>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <div id="result"></div>
+    <main>
+      <div class="container">
+        <img src="images/astrologer.png" alt="Astrologer" />
+        <p>Get your doubts clear within a day</p>
+        <button onclick="connectWithAstrologer()">
+          Connect with an Astrologer
+        </button>
+      </div>
+
+      <!-- Second container (existing date of birth section) -->
+      <div class="container">
+        <img src="images/round.jpg" alt="Horoscope" />
+        <!-- Add an image for the second container -->
+        <p>Check your daily horoscope</p>
+        <input type="date" id="dob-input" onchange="displayZodiacSign()" />
+        <div id="result"></div>
+      </div>
+
+      <!-- Third container -->
+      <div class="container">
+        <img src="images/couple.jpg" alt="Zodiac Compatibility" />
+        <p>Zodiac Compatibility</p>
+        <button onclick="checkNow()">Check Now</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Astrolok Horoscope. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function connectWithAstrologer() {
+        window.location.href = "astrologers.html";
+      }
+
+      function checkNow() {
+        const manDOB = prompt(
+          "Please enter the man's birth date (YYYY-MM-DD):"
+        );
+        const womanDOB = prompt(
+          "Please enter the woman's birth date (YYYY-MM-DD):"
+        );
+
+        if (manDOB && womanDOB) {
+          const manMonth = new Date(manDOB).getUTCMonth() + 1; // Get month (0-based to 1-based)
+          const womanMonth = new Date(womanDOB).getUTCMonth() + 1;
+
+          let compatibilityMessage = "Compatibility results:\n";
+
+          // Compatibility messages based on month combinations
+          if (manMonth === womanMonth) {
+            compatibilityMessage +=
+              "You both share the same birth month, indicating a strong connection!";
+          } else if (
+            (manMonth === 1 && womanMonth === 2) ||
+            (manMonth === 2 && womanMonth === 1)
+          ) {
+            compatibilityMessage +=
+              "January and February: Your relationship may have a spark of excitement!";
+          } else if (
+            (manMonth === 1 && womanMonth === 3) ||
+            (manMonth === 3 && womanMonth === 1)
+          ) {
+            compatibilityMessage +=
+              "January and March: A blend of determination and creativity!";
+          } else if (
+            (manMonth === 1 && womanMonth === 4) ||
+            (manMonth === 4 && womanMonth === 1)
+          ) {
+            compatibilityMessage +=
+              "January and April: A good balance of ambition and adventure!";
+          } else if (
+            (manMonth === 1 && womanMonth === 5) ||
+            (manMonth === 5 && womanMonth === 1)
+          ) {
+            compatibilityMessage +=
+              "January and May: Your strengths complement each other beautifully!";
+          } else if (
+            (manMonth === 1 && womanMonth === 6) ||
+            (manMonth === 6 && womanMonth === 1)
+          ) {
+            compatibilityMessage +=
+              "January and June: A wonderful blend of warmth and creativity!";
+          } else if (
+            (manMonth === 1 && womanMonth === 7) ||
+            (manMonth === 7 && womanMonth === 1)
+          ) {
+            compatibilityMessage +=
+              "January and July: Your relationship is filled with energy and enthusiasm!";
+          } else if (
+            (manMonth === 1 && womanMonth === 8) ||
+            (manMonth === 8 && womanMonth === 1)
+          ) {
+            compatibilityMessage +=
+              "January and August: You inspire each other towards greater heights!";
+          } else if (
+            (manMonth === 1 && womanMonth === 9) ||
+            (manMonth === 9 && womanMonth === 1)
+          ) {
+            compatibilityMessage +=
+              "January and September: A balance of ambition and diligence!";
+          } else if (
+            (manMonth === 1 && womanMonth === 10) ||
+            (manMonth === 10 && womanMonth === 1)
+          ) {
+            compatibilityMessage +=
+              "January and October: A partnership full of surprises!";
+          } else if (
+            (manMonth === 1 && womanMonth === 11) ||
+            (manMonth === 11 && womanMonth === 1)
+          ) {
+            compatibilityMessage +=
+              "January and November: Your bond deepens with understanding!";
+          } else if (
+            (manMonth === 1 && womanMonth === 12) ||
+            (manMonth === 12 && womanMonth === 1)
+          ) {
+            compatibilityMessage +=
+              "January and December: A festive connection full of joy!";
+          } else if (
+            (manMonth === 2 && womanMonth === 3) ||
+            (manMonth === 3 && womanMonth === 2)
+          ) {
+            compatibilityMessage +=
+              "February and March: An inspiring duo full of ideas!";
+          } else if (
+            (manMonth === 2 && womanMonth === 4) ||
+            (manMonth === 4 && womanMonth === 2)
+          ) {
+            compatibilityMessage +=
+              "February and April: Your partnership thrives on mutual respect!";
+          } else if (
+            (manMonth === 2 && womanMonth === 5) ||
+            (manMonth === 5 && womanMonth === 2)
+          ) {
+            compatibilityMessage +=
+              "February and May: A blend of emotion and intelligence!";
+          } else if (
+            (manMonth === 2 && womanMonth === 6) ||
+            (manMonth === 6 && womanMonth === 2)
+          ) {
+            compatibilityMessage +=
+              "February and June: Together, you create a harmonious balance!";
+          } else if (
+            (manMonth === 2 && womanMonth === 7) ||
+            (manMonth === 7 && womanMonth === 2)
+          ) {
+            compatibilityMessage +=
+              "February and July: A unique blend of passion and fun!";
+          } else if (
+            (manMonth === 2 && womanMonth === 8) ||
+            (manMonth === 8 && womanMonth === 2)
+          ) {
+            compatibilityMessage +=
+              "February and August: Your relationship is filled with creativity!";
+          } else if (
+            (manMonth === 2 && womanMonth === 9) ||
+            (manMonth === 9 && womanMonth === 2)
+          ) {
+            compatibilityMessage +=
+              "February and September: A strong balance of emotion and practicality!";
+          } else if (
+            (manMonth === 2 && womanMonth === 10) ||
+            (manMonth === 10 && womanMonth === 2)
+          ) {
+            compatibilityMessage +=
+              "February and October: Your bond is filled with excitement!";
+          } else if (
+            (manMonth === 2 && womanMonth === 11) ||
+            (manMonth === 11 && womanMonth === 2)
+          ) {
+            compatibilityMessage +=
+              "February and November: Your connection is filled with compassion!";
+          } else if (
+            (manMonth === 2 && womanMonth === 12) ||
+            (manMonth === 12 && womanMonth === 2)
+          ) {
+            compatibilityMessage +=
+              "February and December: A festive partnership that brings joy!";
+          } else if (
+            (manMonth === 3 && womanMonth === 4) ||
+            (manMonth === 4 && womanMonth === 3)
+          ) {
+            compatibilityMessage +=
+              "March and April: A dynamic duo with great potential!";
+          } else if (
+            (manMonth === 3 && womanMonth === 5) ||
+            (manMonth === 5 && womanMonth === 3)
+          ) {
+            compatibilityMessage +=
+              "March and May: Your creativity and adaptability make a great team!";
+          } else if (
+            (manMonth === 3 && womanMonth === 6) ||
+            (manMonth === 6 && womanMonth === 3)
+          ) {
+            compatibilityMessage +=
+              "March and June: A balance of intuition and practicality!";
+          } else if (
+            (manMonth === 3 && womanMonth === 7) ||
+            (manMonth === 7 && womanMonth === 3)
+          ) {
+            compatibilityMessage +=
+              "March and July: Your relationship is filled with energy and joy!";
+          } else if (
+            (manMonth === 3 && womanMonth === 8) ||
+            (manMonth === 8 && womanMonth === 3)
+          ) {
+            compatibilityMessage +=
+              "March and August: A creative partnership that inspires others!";
+          } else if (
+            (manMonth === 3 && womanMonth === 9) ||
+            (manMonth === 9 && womanMonth === 3)
+          ) {
+            compatibilityMessage +=
+              "March and September: A grounded relationship full of potential!";
+          } else if (
+            (manMonth === 3 && womanMonth === 10) ||
+            (manMonth === 10 && womanMonth === 3)
+          ) {
+            compatibilityMessage +=
+              "March and October: A dynamic duo of ideas and creativity!";
+          } else if (
+            (manMonth === 3 && womanMonth === 11) ||
+            (manMonth === 11 && womanMonth === 3)
+          ) {
+            compatibilityMessage +=
+              "March and November: Your bond is strengthened through understanding!";
+          } else if (
+            (manMonth === 3 && womanMonth === 12) ||
+            (manMonth === 12 && womanMonth === 3)
+          ) {
+            compatibilityMessage +=
+              "March and December: A festive connection filled with joy!";
+          } else if (
+            (manMonth === 4 && womanMonth === 5) ||
+            (manMonth === 5 && womanMonth === 4)
+          ) {
+            compatibilityMessage +=
+              "April and May: Together, you can achieve amazing things!";
+          } else if (
+            (manMonth === 4 && womanMonth === 6) ||
+            (manMonth === 6 && womanMonth === 4)
+          ) {
+            compatibilityMessage +=
+              "April and June: A partnership full of adventure and growth!";
+          } else if (
+            (manMonth === 4 && womanMonth === 7) ||
+            (manMonth === 7 && womanMonth === 4)
+          ) {
+            compatibilityMessage +=
+              "April and July: Your relationship is a blend of fun and excitement!";
+          } else if (
+            (manMonth === 4 && womanMonth === 8) ||
+            (manMonth === 8 && womanMonth === 4)
+          ) {
+            compatibilityMessage +=
+              "April and August: A dynamic duo full of creativity!";
+          } else if (
+            (manMonth === 4 && womanMonth === 9) ||
+            (manMonth === 9 && womanMonth === 4)
+          ) {
+            compatibilityMessage +=
+              "April and September: A balance of ambition and practicality!";
+          } else if (
+            (manMonth === 4 && womanMonth === 10) ||
+            (manMonth === 10 && womanMonth === 4)
+          ) {
+            compatibilityMessage +=
+              "April and October: A relationship filled with surprises!";
+          } else if (
+            (manMonth === 4 && womanMonth === 11) ||
+            (manMonth === 11 && womanMonth === 4)
+          ) {
+            compatibilityMessage +=
+              "April and November: Your bond deepens with understanding!";
+          } else if (
+            (manMonth === 4 && womanMonth === 12) ||
+            (manMonth === 12 && womanMonth === 4)
+          ) {
+            compatibilityMessage +=
+              "April and December: A festive connection that brings joy!";
+          } else if (
+            (manMonth === 5 && womanMonth === 6) ||
+            (manMonth === 6 && womanMonth === 5)
+          ) {
+            compatibilityMessage +=
+              "May and June: A partnership filled with creativity and joy!";
+          } else if (
+            (manMonth === 5 && womanMonth === 7) ||
+            (manMonth === 7 && womanMonth === 5)
+          ) {
+            compatibilityMessage +=
+              "May and July: Your relationship is filled with energy and passion!";
+          } else if (
+            (manMonth === 5 && womanMonth === 8) ||
+            (manMonth === 8 && womanMonth === 5)
+          ) {
+            compatibilityMessage +=
+              "May and August: A beautiful blend of emotion and creativity!";
+          } else if (
+            (manMonth === 5 && womanMonth === 9) ||
+            (manMonth === 9 && womanMonth === 5)
+          ) {
+            compatibilityMessage +=
+              "May and September: A balance of ambition and care!";
+          } else if (
+            (manMonth === 5 && womanMonth === 10) ||
+            (manMonth === 10 && womanMonth === 5)
+          ) {
+            compatibilityMessage +=
+              "May and October: Your bond is filled with enthusiasm!";
+          } else if (
+            (manMonth === 5 && womanMonth === 11) ||
+            (manMonth === 11 && womanMonth === 5)
+          ) {
+            compatibilityMessage +=
+              "May and November: A connection strengthened by mutual understanding!";
+          } else if (
+            (manMonth === 5 && womanMonth === 12) ||
+            (manMonth === 12 && womanMonth === 5)
+          ) {
+            compatibilityMessage +=
+              "May and December: A festive partnership filled with joy!";
+          } else if (
+            (manMonth === 6 && womanMonth === 7) ||
+            (manMonth === 7 && womanMonth === 6)
+          ) {
+            compatibilityMessage +=
+              "June and July: A fun and adventurous relationship!";
+          } else if (
+            (manMonth === 6 && womanMonth === 8) ||
+            (manMonth === 8 && womanMonth === 6)
+          ) {
+            compatibilityMessage +=
+              "June and August: Your creativity and passion shine together!";
+          } else if (
+            (manMonth === 6 && womanMonth === 9) ||
+            (manMonth === 9 && womanMonth === 6)
+          ) {
+            compatibilityMessage +=
+              "June and September: A strong balance of love and support!";
+          } else if (
+            (manMonth === 6 && womanMonth === 10) ||
+            (manMonth === 10 && womanMonth === 6)
+          ) {
+            compatibilityMessage +=
+              "June and October: A relationship full of adventure and surprises!";
+          } else if (
+            (manMonth === 6 && womanMonth === 11) ||
+            (manMonth === 11 && womanMonth === 6)
+          ) {
+            compatibilityMessage +=
+              "June and November: Your bond grows deeper with understanding!";
+          } else if (
+            (manMonth === 6 && womanMonth === 12) ||
+            (manMonth === 12 && womanMonth === 6)
+          ) {
+            compatibilityMessage +=
+              "June and December: A joyful connection filled with celebration!";
+          } else if (
+            (manMonth === 7 && womanMonth === 8) ||
+            (manMonth === 8 && womanMonth === 7)
+          ) {
+            compatibilityMessage +=
+              "July and August: A passionate partnership full of fun!";
+          } else if (
+            (manMonth === 7 && womanMonth === 9) ||
+            (manMonth === 9 && womanMonth === 7)
+          ) {
+            compatibilityMessage +=
+              "July and September: Your relationship is vibrant and exciting!";
+          } else if (
+            (manMonth === 7 && womanMonth === 10) ||
+            (manMonth === 10 && womanMonth === 7)
+          ) {
+            compatibilityMessage +=
+              "July and October: A strong connection that inspires growth!";
+          } else if (
+            (manMonth === 7 && womanMonth === 11) ||
+            (manMonth === 11 && womanMonth === 7)
+          ) {
+            compatibilityMessage +=
+              "July and November: Your partnership is filled with creativity!";
+          } else if (
+            (manMonth === 7 && womanMonth === 12) ||
+            (manMonth === 12 && womanMonth === 7)
+          ) {
+            compatibilityMessage +=
+              "July and December: A festive relationship filled with joy!";
+          } else if (
+            (manMonth === 8 && womanMonth === 9) ||
+            (manMonth === 9 && womanMonth === 8)
+          ) {
+            compatibilityMessage +=
+              "August and September: A blend of creativity and diligence!";
+          } else if (
+            (manMonth === 8 && womanMonth === 10) ||
+            (manMonth === 10 && womanMonth === 8)
+          ) {
+            compatibilityMessage +=
+              "August and October: A partnership full of excitement!";
+          } else if (
+            (manMonth === 8 && womanMonth === 11) ||
+            (manMonth === 11 && womanMonth === 8)
+          ) {
+            compatibilityMessage +=
+              "August and November: Your relationship thrives on mutual respect!";
+          } else if (
+            (manMonth === 8 && womanMonth === 12) ||
+            (manMonth === 12 && womanMonth === 8)
+          ) {
+            compatibilityMessage +=
+              "August and December: A joyful bond filled with celebration!";
+          } else if (
+            (manMonth === 9 && womanMonth === 10) ||
+            (manMonth === 10 && womanMonth === 9)
+          ) {
+            compatibilityMessage +=
+              "September and October: A strong partnership that fosters creativity!";
+          } else if (
+            (manMonth === 9 && womanMonth === 11) ||
+            (manMonth === 11 && womanMonth === 9)
+          ) {
+            compatibilityMessage +=
+              "September and November: Your bond deepens with understanding!";
+          } else if (
+            (manMonth === 9 && womanMonth === 12) ||
+            (manMonth === 12 && womanMonth === 9)
+          ) {
+            compatibilityMessage +=
+              "September and December: A festive connection full of joy!";
+          } else if (
+            (manMonth === 10 && womanMonth === 11) ||
+            (manMonth === 11 && womanMonth === 10)
+          ) {
+            compatibilityMessage +=
+              "October and November: A relationship full of surprises!";
+          } else if (
+            (manMonth === 10 && womanMonth === 12) ||
+            (manMonth === 12 && womanMonth === 10)
+          ) {
+            compatibilityMessage +=
+              "October and December: A joyful bond filled with celebration!";
+          } else if (
+            (manMonth === 11 && womanMonth === 12) ||
+            (manMonth === 12 && womanMonth === 11)
+          ) {
+            compatibilityMessage +=
+              "November and December: A festive partnership that brings joy!";
+          }
+
+          // Default message if no specific combination matched
+          compatibilityMessage +=
+            "\nKeep exploring your connection and see where it leads!";
+
+          document.getElementById("result").innerHTML = `
+        Man's Date of Birth: ${manDOB}<br>
+        Woman's Date of Birth: ${womanDOB}<br>
+        ${compatibilityMessage}
+      `;
+        } else {
+          alert("Please enter both dates.");
+        }
+      }
+      function showDobInput() {
+        document.getElementById("dob-input").style.display = "block";
+      }
+
+      function displayZodiacSign() {
+        const birthDate = new Date(document.getElementById("dob-input").value);
+        const zodiacSign = getZodiacSign(birthDate);
+
+        const zodiacPages = {
+          Aries: "zodiac/aries.html",
+          Taurus: "zodiac/taurus.html",
+          Gemini: "zodiac/gemini.html",
+          Cancer: "zodiac/cancer.html",
+          Leo: "zodiac/leo.html",
+          Virgo: "zodiac/virgo.html",
+          Libra: "zodiac/libra.html",
+          Scorpio: "zodiac/scorpio.html",
+          Sagittarius: "zodiac/sagittarius.html",
+          Capricorn: "zodiac/capricorn.html",
+          Aquarius: "zodiac/aquarius.html",
+          Pisces: "zodiac/pisces.html",
+        };
+
+        const zodiacPage = zodiacPages[zodiacSign];
+
+        document.getElementById("result").innerHTML = `
+            <a href="${zodiacPage}">
+                <img src="images/${zodiacSign.toLowerCase()}.jpg" alt="${zodiacSign}" class="zodiac-image">
+            </a>
+            <p>You're an ${zodiacSign}, click on the above image to get your horoscope.</p>
+        `;
+      }
+
+      function getZodiacSign(date) {
+        const month = date.getUTCMonth() + 1;
+        const day = date.getUTCDate();
+
+        if ((month === 1 && day >= 20) || (month === 2 && day <= 18))
+          return "Aquarius";
+        if ((month === 2 && day >= 19) || (month === 3 && day <= 20))
+          return "Pisces";
+        if ((month === 3 && day >= 21) || (month === 4 && day <= 19))
+          return "Aries";
+        if ((month === 4 && day >= 20) || (month === 5 && day <= 20))
+          return "Taurus";
+        if ((month === 5 && day >= 21) || (month === 6 && day <= 20))
+          return "Gemini";
+        if ((month === 6 && day >= 21) || (month === 7 && day <= 22))
+          return "Cancer";
+        if ((month === 7 && day >= 23) || (month === 8 && day <= 22))
+          return "Leo";
+        if ((month === 8 && day >= 23) || (month === 9 && day <= 22))
+          return "Virgo";
+        if ((month === 9 && day >= 23) || (month === 10 && day <= 22))
+          return "Libra";
+        if ((month === 10 && day >= 23) || (month === 11 && day <= 21))
+          return "Scorpio";
+        if ((month === 11 && day >= 22) || (month === 12 && day <= 21))
+          return "Sagittarius";
+        if ((month === 12 && day >= 22) || (month === 1 && day <= 19))
+          return "Capricorn";
+      }
+      function logout() {
+        window.location.href = "home.html";
+      }
+    </script>
+  </body>
+</html>

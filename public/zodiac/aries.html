@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aries Horoscope</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e1e1e, #333);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            align-items: flex-start;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .zodiac-image {
+            width: 350px;
+            height: auto;
+            margin: 0;
+            border-right: 3px solid #e74c3c;
+        }
+
+        .horoscope-info {
+            padding: 20px 30px;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        h1 {
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #ffb84d;
+            margin-top: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .zodiac-image {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 3px solid #e74c3c;
+            }
+
+            .horoscope-info {
+                max-width: 100%;
+                padding: 20px;
+            }
+        }
+        .close-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .close-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closePage()">Close</button>
+
+    <div class="container">
+      <img src="../images/aries.jpg" alt="Gemini" class="zodiac-image" />
+      <div class="horoscope-info">
+            <h1>Aries Horoscope</h1>
+            <h2>What is the personality of an Aries?</h2>
+            <p>
+                At their core, Aries do things their own way. They are unafraid of conflict, highly competitive, and honest. They throw themselves at the world eagerly and without fear.
+            </p>
+            <p>
+                Aries are driven by a desire to prove themselves and their strength. They have high energy, are competitive and ambitious. They naturally take charge because they are good at initiating new projects. They can also be impatient, but are naturally active and don’t like to waste time.
+            </p>
+            <p>
+                While Aries like competition, they don’t like to play games. They are highly self-aware, have strong opinions, and are always ready to defend them.
+            </p>
+            <h2>What are an Aries' weaknesses?</h2>
+            <p>
+                All Aries want to feel things intensely. This is one of their most commendable qualities, but also what causes them a great deal of pain and grief. Aries tend to be impulsive, impatient, and hotheaded. They are often reacting out of emotion rather than from a place of calm clear-headedness. They do not apologize for their anger. They say “I don’t care” and mean it. They don’t always have the best self-control.
+            </p>
+            <h2>Does Aries fall in love quickly?</h2>
+            <p>
+                Aries do fall in love relatively quickly. They have a lot of energy, and they don’t want to waste too much time on trivial matters. While they enjoy taking the time to get to know a person, they may not do so for an extended period. Aries usually are immediately aware of whether or not they are in love with someone. The decision to be in a relationship doesn’t take long for them. An Aries will have strong feelings about whether or not the relationship is working and will be able to break things off without much difficulty.
+            </p>
+            <h2>Who are Aries attracted to?</h2>
+            <p>
+                Aries are attracted to people who can keep up with them. For Aries, emotions are fleeting, and they like being around people who embrace that. They are drawn to physicality, directness, and warmth. Being upfront about your intentions and desires will put an Aries at ease—it conveys that it’s safe for them to be themselves around you.
+            </p>
+        </div>
+    </div>
+    <script>
+        function closePage() {
+          window.location.href = '../k.html'; // Redirect to k.html on close
+        }
+      </script>
+</body>
+</html>

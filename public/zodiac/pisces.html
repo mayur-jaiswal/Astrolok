@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pisces Horoscope</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e1e1e, #333);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        align-items: flex-start;
+        max-width: 1000px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .zodiac-image {
+        width: 350px;
+        height: auto;
+        margin: 0;
+        border-right: 3px solid #3498db;
+      }
+
+      .horoscope-info {
+        padding: 20px 30px;
+        max-width: 600px;
+        text-align: left;
+      }
+
+      h1 {
+        color: #3498db;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        color: #76c7c0;
+        margin-top: 20px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .zodiac-image {
+          width: 100%;
+          height: auto;
+          border-right: none;
+          border-bottom: 3px solid #3498db;
+        }
+
+        .horoscope-info {
+          max-width: 100%;
+          padding: 20px;
+        }
+      }
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .close-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closePage()">Close</button>
+
+    <div class="container">
+      <img src="../images/pisces.jpg" alt="Gemini" class="zodiac-image" />
+      <div class="horoscope-info">
+        <h1>Pisces Horoscope</h1>
+        <h2>What is the personality of a Pisces?</h2>
+        <p>
+          Pisces are known for their deep emotional sensitivity and strong
+          intuition. They are compassionate, empathetic, and often feel deeply
+          connected to the people and world around them. Pisces have a rich
+          inner life and can be very creative, often excelling in the arts.
+        </p>
+        <p>
+          They are dreamers who love to escape reality, which makes them highly
+          imaginative but sometimes prone to getting lost in their fantasies.
+          Pisces are also adaptable and can go with the flow, making them easy
+          to get along with.
+        </p>
+        <p>
+          Pisces are naturally empathetic and can easily pick up on the emotions
+          of others, often feeling them as if they were their own.
+        </p>
+        <h2>What are a Pisces' weaknesses?</h2>
+        <p>
+          Pisces can sometimes struggle with being too sensitive, which can make
+          them easily overwhelmed by the emotions and energies around them. They
+          may have difficulty setting boundaries, leading to situations where
+          they feel drained or taken advantage of.
+        </p>
+        <p>
+          Their tendency to escape into their own world can also make them
+          appear detached or unreliable. Pisces may also struggle with
+          decision-making, as they can be indecisive and overly trusting.
+        </p>
+        <h2>Does Pisces fall in love quickly?</h2>
+        <p>
+          Pisces can fall in love quickly because they are romantics at heart.
+          They love the idea of love and are often willing to dive into
+          relationships with their whole heart. However, their idealistic nature
+          can sometimes lead them to overlook potential red flags.
+        </p>
+        <p>
+          Once in love, Pisces are incredibly devoted and will do anything for
+          their partner, often putting their needs above their own.
+        </p>
+        <h2>Who are Pisces attracted to?</h2>
+        <p>
+          Pisces are attracted to people who are kind, understanding, and
+          emotionally open. They are drawn to those who can share in their
+          imaginative world and who appreciate their creativity and sensitivity.
+          Pisces appreciate partners who are compassionate and who provide a
+          sense of security and emotional support.
+        </p>
+      </div>
+    </div>
+    <script>
+      function closePage() {
+        window.location.href = '../k.html'; // Redirect to k.html on close
+      }
+    </script>
+  </body>
+</html>

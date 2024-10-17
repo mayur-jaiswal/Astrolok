@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini Horoscope</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e1e1e, #333);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        align-items: flex-start;
+        max-width: 1000px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .zodiac-image {
+        width: 350px;
+        height: auto;
+        margin: 0;
+        border-right: 3px solid #3498db;
+      }
+
+      .horoscope-info {
+        padding: 20px 30px;
+        max-width: 600px;
+        text-align: left;
+      }
+
+      h1 {
+        color: #3498db;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        color: #f39c12;
+        margin-top: 20px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .zodiac-image {
+          width: 100%;
+          height: auto;
+          border-right: none;
+          border-bottom: 3px solid #3498db;
+        }
+
+        .horoscope-info {
+          max-width: 100%;
+          padding: 20px;
+        }
+      }
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .close-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closePage()">Close</button>
+
+    <div class="container">
+      <img src="../images/gemini.jpg" alt="Gemini" class="zodiac-image" />
+      <div class="horoscope-info">
+        <h1>Gemini Horoscope</h1>
+        <h2>What is the personality of a Gemini?</h2>
+        <p>
+          Geminis are known for their dual nature, often balancing between
+          different interests and personas. They are curious, adaptable, and
+          lively, thriving on new experiences and knowledge. With a sharp
+          intellect and witty communication, Geminis are social butterflies who
+          enjoy engaging conversations and making connections.
+        </p>
+        <p>
+          They possess a versatile nature, often juggling multiple projects and
+          interests at once. This adaptability makes them excellent at thinking
+          on their feet, though they may struggle with consistency. Their charm
+          and quick wit make them enjoyable companions, though they can
+          sometimes come across as inconsistent or indecisive.
+        </p>
+        <p>
+          Geminis are naturally inquisitive and love to explore new ideas. They
+          thrive in dynamic environments where they can continually learn and
+          adapt. However, their need for variety can sometimes lead them to
+          scatter their energies.
+        </p>
+        <h2>What are a Gemini's weaknesses?</h2>
+        <p>
+          Geminis can struggle with a lack of focus and commitment due to their
+          ever-changing interests. Their dual nature can sometimes lead to
+          indecisiveness or inconsistency in their actions and decisions. They
+          might also be perceived as superficial or overly talkative, as they
+          often focus on breadth rather than depth in their relationships and
+          pursuits.
+        </p>
+        <h2>Does Gemini fall in love quickly?</h2>
+        <p>
+          Geminis are known for their flirtatious and charming nature, which can
+          lead them to fall in love quickly. They are drawn to intellectual
+          stimulation and emotional connection, but their love can be as dynamic
+          and fluctuating as their personalities. While they may quickly develop
+          strong feelings, their need for mental and emotional engagement means
+          they seek a deep and meaningful connection.
+        </p>
+        <h2>Who are Geminis attracted to?</h2>
+        <p>
+          Geminis are attracted to individuals who can match their intellectual
+          curiosity and keep up with their lively conversations. They are drawn
+          to people who are adaptable, open-minded, and can engage in
+          stimulating discussions. A partner who values communication and
+          embraces change will resonate well with a Gemini's ever-evolving
+          nature.
+        </p>
+      </div>
+    </div>
+    <script>
+      function closePage() {
+        window.location.href = '../k.html'; // Redirect to k.html on close
+      }
+    </script>
+  </body>
+</html>

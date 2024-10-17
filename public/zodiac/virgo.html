@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virgo Horoscope</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e1e1e, #333);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        align-items: flex-start;
+        max-width: 1000px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .zodiac-image {
+        width: 350px;
+        height: auto;
+        margin: 0;
+        border-right: 3px solid #2ecc71;
+      }
+
+      .horoscope-info {
+        padding: 20px 30px;
+        max-width: 600px;
+        text-align: left;
+      }
+
+      h1 {
+        color: #2ecc71;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        color: #f39c12;
+        margin-top: 20px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .zodiac-image {
+          width: 100%;
+          height: auto;
+          border-right: none;
+          border-bottom: 3px solid #2ecc71;
+        }
+
+        .horoscope-info {
+          max-width: 100%;
+          padding: 20px;
+        }
+      }
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .close-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closePage()">Close</button>
+
+    <div class="container">
+      <img src="../images/virgo.jpg" alt="Gemini" class="zodiac-image" />
+      <div class="horoscope-info">
+        <h1>Virgo Horoscope</h1>
+        <h2>What is the personality of a Virgo?</h2>
+        <p>
+          Virgos are known for their meticulous and analytical nature. They have
+          a keen eye for detail and strive for perfection in everything they do.
+          Practical, reliable, and hardworking, Virgos are often seen as the
+          problem-solvers of the zodiac, using their analytical skills to tackle
+          challenges efficiently.
+        </p>
+        <p>
+          They value order and cleanliness, and their methodical approach to
+          life makes them exceptional planners and organizers. Virgos are often
+          introverted and reserved, preferring to work behind the scenes rather
+          than seeking the spotlight. Their sense of duty and reliability make
+          them dependable friends and colleagues.
+        </p>
+        <p>
+          Despite their practical nature, Virgos can be perfectionists who set
+          high standards for themselves and others. This quest for perfection
+          can sometimes lead to self-criticism or overthinking.
+        </p>
+        <h2>What are a Virgo's weaknesses?</h2>
+        <p>
+          Virgos' pursuit of perfection can lead to excessive worry and stress.
+          Their critical eye, while useful, can also result in overanalyzing and
+          a tendency to be overly critical of themselves and others. They may
+          struggle with letting go of minor imperfections, which can lead to
+          frustration and an inability to relax.
+        </p>
+        <h2>Does Virgo fall in love quickly?</h2>
+        <p>
+          Virgos tend to be cautious and analytical when it comes to love. They
+          prefer to take their time to understand their feelings and the
+          dynamics of a relationship before fully committing. They value
+          stability and are likely to evaluate their partner carefully before
+          diving into a serious relationship.
+        </p>
+        <h2>Who are Virgos attracted to?</h2>
+        <p>
+          Virgos are attracted to individuals who are reliable, grounded, and
+          share their appreciation for order and stability. They value intellect
+          and find themselves drawn to people who are thoughtful and can engage
+          in meaningful conversations. A partner who respects their need for
+          organization and understands their desire for a well-structured life
+          will resonate well with a Virgo.
+        </p>
+      </div>
+    </div>
+    <script>
+      function closePage() {
+        window.location.href = '../k.html'; // Redirect to k.html on close
+      }
+    </script>
+  </body>
+</html>

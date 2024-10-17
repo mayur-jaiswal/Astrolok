@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capricorn Horoscope</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e1e1e, #333);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        align-items: flex-start;
+        max-width: 1000px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .zodiac-image {
+        width: 350px;
+        height: auto;
+        margin: 0;
+        border-right: 3px solid #8e44ad;
+      }
+
+      .horoscope-info {
+        padding: 20px 30px;
+        max-width: 600px;
+        text-align: left;
+      }
+
+      h1 {
+        color: #8e44ad;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        color: #f39c12;
+        margin-top: 20px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .zodiac-image {
+          width: 100%;
+          height: auto;
+          border-right: none;
+          border-bottom: 3px solid #8e44ad;
+        }
+
+        .horoscope-info {
+          max-width: 100%;
+          padding: 20px;
+        }
+      }
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .close-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closePage()">Close</button>
+
+    <div class="container">
+      <img src="../images/capricorn.jpg" alt="Gemini" class="zodiac-image" />
+      <div class="horoscope-info">
+        <h1>Capricorn Horoscope</h1>
+        <h2>What is the personality of a Capricorn?</h2>
+        <p>
+          Capricorns are known for their disciplined, ambitious, and practical
+          nature. They are highly motivated individuals who set long-term goals
+          and work diligently to achieve them. With a strong sense of
+          responsibility and a meticulous approach, Capricorns excel in their
+          careers and personal lives.
+        </p>
+        <p>
+          They value stability and are often seen as reliable and trustworthy.
+          Their realistic mindset allows them to face challenges head-on and
+          persevere through difficulties. Capricorns are also known for their
+          ability to plan meticulously and execute their plans with precision.
+        </p>
+        <p>
+          While they may sometimes come across as reserved or serious, their
+          commitment to their goals and their practical approach make them
+          steadfast and dependable individuals.
+        </p>
+        <h2>What are a Capricorn's weaknesses?</h2>
+        <p>
+          Capricorns' intense focus on their goals can sometimes lead to
+          workaholism and neglect of personal relationships. Their high
+          standards and expectations can result in self-criticism and stress.
+          They may also struggle with flexibility, finding it challenging to
+          adapt to unexpected changes or deviations from their plans.
+        </p>
+        <h2>Does Capricorn fall in love quickly?</h2>
+        <p>
+          Capricorns are typically cautious when it comes to matters of the
+          heart. They take their time to evaluate potential partners and ensure
+          that a relationship aligns with their long-term goals. While they may
+          not fall in love quickly, their commitment and loyalty, once
+          established, are deep and enduring.
+        </p>
+        <h2>Who are Capricorns attracted to?</h2>
+        <p>
+          Capricorns are attracted to individuals who are ambitious, reliable,
+          and share their values of hard work and stability. They appreciate
+          partners who can provide emotional support and who are capable of
+          understanding and respecting their need for structure and order. A
+          strong sense of responsibility and a shared vision for the future will
+          resonate well with a Capricorn.
+        </p>
+      </div>
+    </div>
+    <script>
+      function closePage() {
+        window.location.href = '../k.html'; // Redirect to k.html on close
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+    .navbar {
+      width: 100%;
+      background-color: #333;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      padding: 14px 20px;
+    }
+    h1 {
+      color: #3498db;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .close-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: auto;
+  }
+
+  .close-btn:hover {
+    background-color: #d32f2f;
+  }
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <button class="close-btn" onclick="closePage()">Close</button>
+        <a href="contact.html">Contact</a>
+        <a href="blogs.html">Blogs</a>
+      </div>
+  
+  <h1>About Us</h1>
+  <p>
+    Welcome to Astrolok! We are passionate about astrology and helping people discover more about their zodiac signs. Our website provides insightful horoscopes and detailed information about each zodiac sign. Stay connected and explore your stars with us!
+  </p>
+  <script>
+    function closePage() {
+      window.location.href = 'k.html'; 
+    }
+  </script>
+  
+</body>
+</html>

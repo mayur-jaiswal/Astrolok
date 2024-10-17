@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cancer Horoscope</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e1e1e, #333);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        align-items: flex-start;
+        max-width: 1000px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .zodiac-image {
+        width: 350px;
+        height: auto;
+        margin: 0;
+        border-right: 3px solid #1abc9c;
+      }
+
+      .horoscope-info {
+        padding: 20px 30px;
+        max-width: 600px;
+        text-align: left;
+      }
+
+      h1 {
+        color: #1abc9c;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        color: #f39c12;
+        margin-top: 20px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .zodiac-image {
+          width: 100%;
+          height: auto;
+          border-right: none;
+          border-bottom: 3px solid #1abc9c;
+        }
+
+        .horoscope-info {
+          max-width: 100%;
+          padding: 20px;
+        }
+      }
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .close-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closePage()">Close</button>
+
+    <div class="container">
+      <img src="../images/cancer.jpg" alt="Gemini" class="zodiac-image" />
+      <div class="horoscope-info">
+        <h1>Cancer Horoscope</h1>
+        <h2>What is the personality of a Cancer?</h2>
+        <p>
+          Cancers are known for their nurturing, empathetic, and intuitive
+          nature. They are deeply connected to their emotions and are highly
+          sensitive to the feelings of others. Their caring disposition makes
+          them excellent friends and family members, always ready to offer
+          support and comfort.
+        </p>
+        <p>
+          They are highly intuitive and often trust their gut feelings when
+          making decisions. Cancers value home and family life, creating a sense
+          of security and warmth for those around them. Their strong sense of
+          loyalty and dedication make them reliable and loving partners.
+        </p>
+        <p>
+          Although they can be reserved and private about their own feelings,
+          their compassion and understanding shine through in their interactions
+          with others.
+        </p>
+        <h2>What are a Cancer's weaknesses?</h2>
+        <p>
+          Cancers may struggle with moodiness and over-sensitivity, as their
+          deep emotional nature can lead to fluctuations in their mood. Their
+          tendency to retreat into their shell when feeling hurt can sometimes
+          make them seem distant or unapproachable. Additionally, their strong
+          need for security can make them overly cautious or hesitant to embrace
+          change.
+        </p>
+        <h2>Does Cancer fall in love quickly?</h2>
+        <p>
+          Cancers are often guided by their emotions, which can lead them to
+          fall in love deeply and quickly. They seek meaningful and secure
+          relationships where they can express their nurturing side. While they
+          may form strong attachments quickly, they also take their time to
+          ensure that their partner is the right fit for their emotional needs.
+        </p>
+        <h2>Who are Cancers attracted to?</h2>
+        <p>
+          Cancers are drawn to individuals who are empathetic, caring, and
+          capable of understanding their emotional depth. They appreciate
+          partners who value family and home life, and who can provide a sense
+          of security and stability. A partner who is supportive and emotionally
+          available will resonate well with a Cancer’s nurturing nature.
+        </p>
+      </div>
+    </div>
+    <script>
+      function closePage() {
+        window.location.href = '../k.html'; // Redirect to k.html on close
+      }
+    </script>
+  </body>
+</html>

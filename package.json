@@ -1,0 +1,20 @@
+{
+  "name": "astrolok",
+  "version": "1.0.0",
+  "description": "Astrolok Horoscope Website with User Authentication",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.7"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "license": "ISC"
+}

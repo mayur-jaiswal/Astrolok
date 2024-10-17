@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leo Horoscope</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e1e1e, #333);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        align-items: flex-start;
+        max-width: 1000px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .zodiac-image {
+        width: 350px;
+        height: auto;
+        margin: 0;
+        border-right: 3px solid #f39c12;
+      }
+
+      .horoscope-info {
+        padding: 20px 30px;
+        max-width: 600px;
+        text-align: left;
+      }
+
+      h1 {
+        color: #f39c12;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        color: #ffd700;
+        margin-top: 20px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .zodiac-image {
+          width: 100%;
+          height: auto;
+          border-right: none;
+          border-bottom: 3px solid #f39c12;
+        }
+
+        .horoscope-info {
+          max-width: 100%;
+          padding: 20px;
+        }
+      }
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .close-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closePage()">Close</button>
+
+    <div class="container">
+      <img src="../images/leo.jpg" alt="Gemini" class="zodiac-image" />
+      <div class="horoscope-info">
+        <h1>Leo Horoscope</h1>
+        <h2>What is the personality of a Leo?</h2>
+        <p>
+          Leos are natural-born leaders, full of confidence and charisma. They
+          thrive in the spotlight, where their charm and warmth can shine. Leos
+          are generous and loyal, often putting the needs of others before their
+          own.
+        </p>
+        <p>
+          A Leo's bold nature and sense of self-worth make them fearless in the
+          pursuit of their goals. They are creative, enthusiastic, and unafraid
+          to take risks. This fire sign is known for its ambition and desire to
+          make a lasting impact on the world.
+        </p>
+        <p>
+          Leos love to be admired and appreciated, and they will go to great
+          lengths to earn the respect and admiration of others. However, their
+          pride can sometimes be their downfall, leading to stubbornness and a
+          refusal to admit when they are wrong.
+        </p>
+        <h2>What are a Leo's weaknesses?</h2>
+        <p>
+          While Leos are confident, they can also be arrogant, demanding
+          constant attention and praise. They may become frustrated if they feel
+          overlooked or underappreciated. This can lead to dramatic outbursts
+          and a tendency to dominate conversations and situations.
+        </p>
+        <p>
+          Leos can also be prone to laziness, particularly when they feel their
+          efforts are not being recognized. They may struggle with
+          self-discipline and can be overly indulgent at times, focusing more on
+          pleasure than responsibility.
+        </p>
+        <h2>Does Leo fall in love quickly?</h2>
+        <p>
+          Leos are passionate lovers who fall in love quickly and intensely.
+          They are generous with their affection and enjoy showering their
+          partners with gifts and attention. However, they also expect the same
+          level of devotion in return and can become possessive or jealous if
+          they feel neglected.
+        </p>
+        <h2>Who are Leos attracted to?</h2>
+        <p>
+          Leos are attracted to people who appreciate their grand gestures and
+          love of luxury. They are drawn to partners who are confident,
+          independent, and capable of keeping up with their high energy levels.
+          Leos value loyalty and are most comfortable in relationships where
+          they feel admired and respected.
+        </p>
+      </div>
+    </div>
+    <script>
+      function closePage() {
+        window.location.href = '../k.html'; // Redirect to k.html on close
+      }
+    </script>
+  </body>
+</html>
